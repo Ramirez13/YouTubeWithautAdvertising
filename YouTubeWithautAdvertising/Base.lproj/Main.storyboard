@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wmw-YN-Ed4">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="6ph-80-PJY">
+            <objects>
+                <viewController id="BQN-Sy-EeG" customClass="ViewController" customModule="YouTubeTest" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="18b-6S-Cv8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="mtu-s8-Mri">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cell" rowHeight="314" id="h0D-iC-aWr" customClass="MainTableViewCell" customModule="YouTubeTest" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="314"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="h0D-iC-aWr" id="Lfz-fp-lSp">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="313.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5HJ-A8-7QY">
+                                                    <rect key="frame" x="15" y="242" width="350" height="61"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="350" id="DF6-ee-rFL"/>
+                                                        <constraint firstAttribute="height" constant="61" id="SbM-9d-hxr"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DI4-Bl-XlZ" customClass="YouTubePlayerView" customModule="YouTubePlayer">
+                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="237"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </view>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="5HJ-A8-7QY" firstAttribute="top" secondItem="DI4-Bl-XlZ" secondAttribute="bottom" constant="5" id="5M7-wy-ffb"/>
+                                                <constraint firstItem="DI4-Bl-XlZ" firstAttribute="top" secondItem="Lfz-fp-lSp" secondAttribute="top" id="M6O-xm-vNA"/>
+                                                <constraint firstItem="DI4-Bl-XlZ" firstAttribute="leading" secondItem="Lfz-fp-lSp" secondAttribute="leading" id="N81-w2-rP2"/>
+                                                <constraint firstAttribute="trailing" secondItem="DI4-Bl-XlZ" secondAttribute="trailing" id="Qyy-iq-rwW"/>
+                                                <constraint firstAttribute="trailing" secondItem="5HJ-A8-7QY" secondAttribute="trailing" constant="10" id="WD6-HI-Hrb"/>
+                                                <constraint firstItem="5HJ-A8-7QY" firstAttribute="leading" secondItem="Lfz-fp-lSp" secondAttribute="leading" constant="15" id="jyB-yX-1gL"/>
+                                                <constraint firstAttribute="bottom" secondItem="5HJ-A8-7QY" secondAttribute="bottom" constant="10.5" id="zve-CN-yHv"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="titleLabel" destination="5HJ-A8-7QY" id="vz5-hi-Ish"/>
+                                            <outlet property="webViewYouTube" destination="DI4-Bl-XlZ" id="aG1-2o-zhC"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="BQN-Sy-EeG" id="96w-tI-PbL"/>
+                                    <outlet property="delegate" destination="BQN-Sy-EeG" id="vf1-2a-JxK"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="kpu-vk-8Ec" firstAttribute="trailing" secondItem="mtu-s8-Mri" secondAttribute="trailing" id="54B-K6-RM5"/>
+                            <constraint firstItem="mtu-s8-Mri" firstAttribute="leading" secondItem="kpu-vk-8Ec" secondAttribute="leading" id="5sK-gf-hrV"/>
+                            <constraint firstItem="mtu-s8-Mri" firstAttribute="top" secondItem="kpu-vk-8Ec" secondAttribute="top" id="jye-4g-9S3"/>
+                            <constraint firstItem="kpu-vk-8Ec" firstAttribute="bottom" secondItem="mtu-s8-Mri" secondAttribute="bottom" id="wdz-mV-Wsw"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="kpu-vk-8Ec"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="ZKS-5w-oy5"/>
+                    <connections>
+                        <outlet property="tableViewOutlet" destination="mtu-s8-Mri" id="cIw-pQ-lcY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vSo-0T-d6B" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="712.79999999999995" y="69.715142428785612"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="i1T-7W-hjA">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wmw-YN-Ed4" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="eg8-9p-Yvg">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BQN-Sy-EeG" kind="relationship" relationship="rootViewController" id="DNx-VJ-jcx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NlU-Nl-2Ym" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="53.600000000000001" y="69.715142428785612"/>
+        </scene>
+    </scenes>
+</document>

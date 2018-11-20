@@ -1,0 +1,6 @@
+framework module Pods_YouTubeWithautAdvertising {
+  umbrella header "Pods-YouTubeWithautAdvertising-umbrella.h"
+
+  export *
+  module * { export * }
+}
